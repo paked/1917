@@ -10,7 +10,15 @@
 
 int isLeapYear(int year) {	
 	assert(year > START_OF_GREGORIAN_CALENDAR);
-	return (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0); 
+	
+	int result = (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0);
+	if (result == 1) {
+		printf("%d is a leap year\n", year);
+	}else {
+		printf("%d is not a leap year\n", year);
+	}
+	
+	return result;
 }
 
 int main(int argc, char * argv[]) {
@@ -18,12 +26,7 @@ int main(int argc, char * argv[]) {
 	printf("What year are you interested kind sir/madam!?\n");
 	scanf("%d", &year);
 	
-	int result = isLeapYear(year);
-	if (result == 1) {
-		printf("%d is a leap year\n", year);
-	}else {
-		printf("%d is not a leap year\n", year);
-	}
+	isLeapYear(year);
 	return 0;
 }
 
