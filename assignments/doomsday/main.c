@@ -37,6 +37,7 @@
 #define DAYS_PER_WEEK 7
 
 int dayOfWeek(int doomsday, int leapYear, int month, int day);
+int anchorForMonth(int leapYear, int month);
 
 int main(int argc, char * argv[]) {
 	printf("Hello, world!\n");
@@ -45,14 +46,25 @@ int main(int argc, char * argv[]) {
 
 int dayOfWeek(int doomsday, int leapYear, int month, int day) {
 	int dayOfWeek = MONDAY;	
+	int anchor = anchorForMonth(leapYear, month); 
+	// find the difference between the anchor and the wanted day
 	
-	assert(month <= DECEMBER);
+	// add distance onto anchor and mod DAYS_IN_WEEK.
 
+	printf("the anchor is%d\n", anchor);
+
+	return dayOfWeek;
+}
+
+int anchorForMonth(int leapYear, int month) {
+	assert(month <= DECEMBER);
+	
+	// Find the anchor day
 	if(month == JANUARY && !leapYear) {
 	
 	}else if (month == JANUARY && leapYear) {
 	
-	}else if (month == FEBRUARY && !leapyear) {
+	}else if (month == FEBRUARY && !leapYear) {
 	
 	}else if (month == FEBRUARY && leapYear) {
 		
@@ -75,5 +87,6 @@ int dayOfWeek(int doomsday, int leapYear, int month, int day) {
 	}else if (month == DECEMBER) {
 	
 	}
-	return dayOfweek
+
+	return 0;
 }
