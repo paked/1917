@@ -8,14 +8,33 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 
-#define MONDAY 0
-#define TUEDAY 1
-#define WEDNESDAY 2
-#define THURSDAY 3
-#define FRIDAY 4
-#define SATURDAY 5
-#define SUNDAY 6
+#define THURSDAY 0
+#define FRIDAY   1
+#define SATURDAY 2
+#define SUNDAY   3
+#define MONDAY   4
+#define TUESDAY  5
+#define WEDNESDAY 6
+
+#define JANUARY  1
+#define FEBRUARY 2
+#define MARCH 3
+#define APRIL 4
+#define MAY 5
+#define JUNE 6
+#define JULY 7
+#define AUGUST 8
+#define SEPTEMBER 9
+#define OCTOBER 10
+#define NOVEMBER 11
+#define DECEMBER 12
+
+#define TRUE 1
+#define FALSE 0
+
+#define DAYS_PER_WEEK 7
 
 int dayOfWeek(int doomsday, int leapYear, int month, int day);
 
@@ -25,7 +44,36 @@ int main(int argc, char * argv[]) {
 }
 
 int dayOfWeek(int doomsday, int leapYear, int month, int day) {
-	int dayOfWeek = MONDAY;
+	int dayOfWeek = MONDAY;	
+	
+	assert(month <= DECEMBER);
 
+	if(month == JANUARY && !leapYear) {
+	
+	}else if (month == JANUARY && leapYear) {
+	
+	}else if (month == FEBRUARY && !leapyear) {
+	
+	}else if (month == FEBRUARY && leapYear) {
+		
+	}else if (month == MARCH) {
+	
+	}else if (month == APRIL) {
+	
+	}else if (month == MAY) {
+	
+	}else if (month == JULY) {
+	
+	}else if (month == AUGUST) {
+	
+	}else if (month == SEPTEMBER) {
+	
+	}else if (month == OCTOBER) {
+	
+	}else if (month == NOVEMBER) {
+	
+	}else if (month == DECEMBER) {
+	
+	}
 	return dayOfweek
 }
