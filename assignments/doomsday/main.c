@@ -57,36 +57,38 @@ int dayOfWeek(int doomsday, int leapYear, int month, int day) {
 }
 
 int anchorForMonth(int leapYear, int month) {
+	int anchor;
+
 	assert(month <= DECEMBER);
-	
+
 	// Find the anchor day
 	if(month == JANUARY && !leapYear) {
-	
+		anchor = 3;	
 	}else if (month == JANUARY && leapYear) {
-	
+		anchor = 11;
 	}else if (month == FEBRUARY && !leapYear) {
-	
+		anchor = 14;
 	}else if (month == FEBRUARY && leapYear) {
-		
+		anchor = 22;
 	}else if (month == MARCH) {
-	
+		anchor = 14;
 	}else if (month == APRIL) {
-	
+		anchor = 4;
 	}else if (month == MAY) {
-	
+		anchor = 9;
 	}else if (month == JULY) {
-	
+		anchor = 11;
 	}else if (month == AUGUST) {
-	
+		anchor = 8;
 	}else if (month == SEPTEMBER) {
-	
+		anchor = 5;	
 	}else if (month == OCTOBER) {
-	
+		anchor = 10;
 	}else if (month == NOVEMBER) {
-	
+		anchor = 7;
 	}else if (month == DECEMBER) {
-	
+		anchor = 12;
 	}
 
-	return 0;
+	return anchor;
 }
