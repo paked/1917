@@ -31,13 +31,17 @@ int main(int arg, char * argv[]) {
         printNums(b, c, a);
     }else if (a < c && c < b) {
         printNums(c, a, b);
+    }else if (a == b == c) {
+        printNums(a, b, c);
     }
 
     return EXIT_SUCCESS;
 }
 
 void printNums(int a, int b, int c) {
-    printf("%d %d %d\n", a, b, c);
+    printf("%d\n", a);
+    printf("%d\n", b);
+    printf("%d\n", c);
 }
 
 
