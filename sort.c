@@ -31,7 +31,7 @@ int main(int arg, char * argv[]) {
         printNums(b, c, a);
     }else if (a < c && c < b) {
         printNums(c, a, b);
-    }else if (a == b == c) {
+    }else if (a == b && b == c) {
         printNums(a, b, c);
     }
 
