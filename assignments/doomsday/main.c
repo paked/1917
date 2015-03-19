@@ -41,25 +41,51 @@ int anchorForMonth(int leapYear, int month);
 
 int main(int argc, char * argv[]) {
 	printf("Hello, world!\n");
+	assert (dayOfWeek (THURSDAY,  FALSE,  4,  4) == THURSDAY);
+	assert (dayOfWeek (FRIDAY,    FALSE,  6,  6) == FRIDAY);
+	assert (dayOfWeek (MONDAY,    FALSE,  8,  8) == MONDAY);
+	assert (dayOfWeek (WEDNESDAY, FALSE, 10, 10) == WEDNESDAY);
+	assert (dayOfWeek (FRIDAY,    FALSE, 12, 12) == FRIDAY);
+	assert (dayOfWeek (THURSDAY,  FALSE,  9,  5) == THURSDAY);
+	assert (dayOfWeek (FRIDAY,    FALSE,  5,  9) == FRIDAY);
+	assert (dayOfWeek (SUNDAY,    FALSE,  7, 11) == SUNDAY);
+	assert (dayOfWeek (TUESDAY,   FALSE, 11,  7) == TUESDAY);
+	assert (dayOfWeek (WEDNESDAY, FALSE,  3,  7) == WEDNESDAY);
+
+	assert (dayOfWeek (THURSDAY,  FALSE,  4,  5) == FRIDAY);
+	assert (dayOfWeek (SATURDAY,  FALSE,  6,  5) == FRIDAY);
+	assert (dayOfWeek (MONDAY,    FALSE,  8,  9) == TUESDAY);
+	assert (dayOfWeek (WEDNESDAY, FALSE, 10,  9) == TUESDAY);
+	assert (dayOfWeek (FRIDAY,    FALSE, 12, 20) == SATURDAY);
+	assert (dayOfWeek (THURSDAY,  FALSE,  9,  9) == MONDAY);
+	assert (dayOfWeek (FRIDAY,    FALSE,  5,  5) == MONDAY);
+	assert (dayOfWeek (SUNDAY,    FALSE,  7,  7) == WEDNESDAY);
+	assert (dayOfWeek (TUESDAY,   FALSE, 11, 11) == SATURDAY);
+	assert (dayOfWeek (THURSDAY,  FALSE,  3, 30) == SATURDAY);
+
+	assert (dayOfWeek (TUESDAY,   FALSE,  2,  28) == TUESDAY);
+	assert (dayOfWeek (TUESDAY,   FALSE,  2,  27) == MONDAY);
+	assert (dayOfWeek (THURSDAY,  FALSE,  1,  3)  == THURSDAY);
+
 	return EXIT_SUCCESS;
 }
 
 int dayOfWeek(int doomsday, int leapYear, int month, int day) {
-	int dayOfWeek = MONDAY;	
-	int anchor = anchorForMonth(leapYear, month); 
-	// find the difference between the anchor and the wanted day
-	
-	// add distance onto anchor and mod DAYS_IN_WEEK.
-
-	printf("the anchor is%d\n", anchor);
-
-	return dayOfWeek;
+    // doomsday is the day which the anchor is on
+    // difference between anchor + (anchor - day)
+    // mod 7.
+    int anchor = anchorForMonth(leapYear, month);
+    int dayOfWeek = (doomsday + (day - anchor)) % 7;
+    if (dayOfWeek < 0) {
+        dayOfWeek = 7 - (dayOfWeek * -1);
+    }
+    printf(" day of week: %d\n", dayOfWeek);
+    return dayOfWeek;
 }
 
 int anchorForMonth(int leapYear, int month) {
-	int anchor;
-
-	assert(month <= DECEMBER);
+	int anchor = 0;
+	assert(month >= JANUARY && month <= DECEMBER);
 
 	// Find the anchor day
 	if(month == JANUARY && !leapYear) {
@@ -76,6 +102,8 @@ int anchorForMonth(int leapYear, int month) {
 		anchor = 4;
 	}else if (month == MAY) {
 		anchor = 9;
+	}else if (month == JUNE) {
+		anchor = 6;
 	}else if (month == JULY) {
 		anchor = 11;
 	}else if (month == AUGUST) {
