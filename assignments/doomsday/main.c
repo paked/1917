@@ -40,7 +40,8 @@ int dayOfWeek(int doomsday, int leapYear, int month, int day);
 int anchorForMonth(int leapYear, int month);
 
 int main(int argc, char * argv[]) {
-	printf("Hello, world!\n");
+	printf("Testing dayOfWeek\n");
+
 	assert (dayOfWeek (THURSDAY,  FALSE,  4,  4) == THURSDAY);
 	assert (dayOfWeek (FRIDAY,    FALSE,  6,  6) == FRIDAY);
 	assert (dayOfWeek (MONDAY,    FALSE,  8,  8) == MONDAY);
@@ -70,22 +71,41 @@ int main(int argc, char * argv[]) {
 	return EXIT_SUCCESS;
 }
 
+// dayOfWeek returns the day of the week which a given date lands on
+// It takes four arguments:
+//  * doomsday - the day which the doomsday lands on for that year
+//  * leapYear - a boolean value, whether or not the year is a leap
+//  * month    - the month of the given date
+//  * day      - the day of the given date
+//
+//  It returns a value between 0-6, which should usually be compared
+//  against one of the "day" constants (MONDAY, TUESDAY, WEDNESDAY, etc)
 int dayOfWeek(int doomsday, int leapYear, int month, int day) {
-    // doomsday is the day which the anchor is on
-    // difference between anchor + (anchor - day)
-    // mod 7.
     int anchor = anchorForMonth(leapYear, month);
     int dayOfWeek = (doomsday + (day - anchor)) % 7;
     if (dayOfWeek < 0) {
         dayOfWeek = 7 - (dayOfWeek * -1);
     }
-    printf(" day of week: %d\n", dayOfWeek);
+
     return dayOfWeek;
 }
 
+// anchorForMonth finds the anchor day for the specified month, 
+// taking into account whether or not it is a yeapYear.
+// It takes two arguments:
+//  * leapYear - a boolean value, whether or not the year is a leap year
+//  * month    - the month that is being checked
+//
+// When possible, anchor dates closer to the middle of the month were
+// used for cleanliness.
+// In practice it will return an integer between 3 and 22 (the lowest
+// and highest anchor days)
 int anchorForMonth(int leapYear, int month) {
 	int anchor = 0;
-	assert(month >= JANUARY && month <= DECEMBER);
+	
+    // Validate inputs (month is a month, leapYear is boolean)
+    assert(month >= JANUARY && month <= DECEMBER);
+    assert(leapYear == TRUE || leapYear == FALSE);
 
 	// Find the anchor day
 	if(month == JANUARY && !leapYear) {
