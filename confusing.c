@@ -36,18 +36,25 @@ int main(int argc, char* argv[]) {
 	double y0, y1, y2;
 	double px, py;
 	 
-	int scanfsReturnValueAggregatedOverAllScanfs = 0;
-	 
+    int totalInputLength = 0;
 	// get input
-			printf("Triangle Vertex A (x,y): "); scanfsReturnValueAggregatedOverAllScanfs += scanf("%lf,%lf", &x0,&y0);
-			printf("Triangle Vertex  B (x,y): "); scanfsReturnValueAggregatedOverAllScanfs += scanf("%lf,%lf", &x1,&y1);
-			printf("Triangle Vertex  C (x,y): "); scanfsReturnValueAggregatedOverAllScanfs += scanf("%lf,%lf", &x2,&y2);
-	   printf("Test Point (x,y): "); scanfsReturnValueAggregatedOverAllScanfs += scanf("%lf,%lf", &px,&py);
+    printf("Triangle Vertex A (x,y): "); 
+    totalInputLength += scanf("%lf,%lf", &x0,&y0);
+    
+    printf("Triangle Vertex  B (x,y): "); 
+    totalInputLength += scanf("%lf,%lf", &x1,&y1);
+    
+    printf("Triangle Vertex  C (x,y): "); 
+    totalInputLength += scanf("%lf,%lf", &x2,&y2);
+    
+    printf("Test Point (x,y): ");
+    totalInputLength += scanf("%lf,%lf", &px,&py);
 	 
 	// print error
-	if( scanfsReturnValueAggregatedOverAllScanfs != 8 ) {
+	if(totalInputLength != 8 ) {
+        // fail, set status to something other than EXIT_SUCCESS
 		printf("You're stupid and didn't put in the right inputs!\n");
-		status = 1;
+		status = EXIT_FAILURE;
 	}else { 
 		// print answer
 		printf("Point (%.2lf,%.2lf) is ", px, py);
@@ -60,11 +67,11 @@ int main(int argc, char* argv[]) {
 		
 		printf(" the Triangel\n");
 	}
-	// Exit safely! 
-	return EXIT_SUCCESS;
+
+	return status;
 }
 
-int test2(double px, double py, double m, double b) {
+int positionTest(double px, double py, double m, double b) {
  	int	output = 1;
 	if(py < m * px + b) {
 		// The point is underneath the line
@@ -77,11 +84,11 @@ int test2(double px, double py, double m, double b) {
 }
  
 // two points lie on the same side of a line
-int test1(double px, double py, double m, double b, double lx, double ly) {
+int lineTest(double px, double py, double m, double b, double lx, double ly) {
 	return (test2(px, py, m, b) == test2(lx, ly, m, b));
 }
 
-int tritest(double x0, double y0, double x1, double y1, double x2, double y2, double px, double py){
+int triangleTest(double x0, double y0, double x1, double y1, double x2, double y2, double px, double py){
 	int line1, line2, line3;	
 	double m01, m02, m12;
 	double b01, b02, b12;
