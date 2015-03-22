@@ -82,7 +82,9 @@ int main(int argc, char * argv[]) {
 //  against one of the "day" constants (MONDAY, TUESDAY, WEDNESDAY, etc)
 int dayOfWeek(int doomsday, int leapYear, int month, int day) {
     int anchor = anchorForMonth(leapYear, month);
+    // Do the *doomsday* logic!
     int dayOfWeek = (doomsday + (day - anchor)) % DAYS_PER_WEEK;
+    // Wrap around the day of week in case of an overflow
     if (dayOfWeek < 0) {
         dayOfWeek = DAYS_PER_WEEK - (dayOfWeek * -1);
     }
