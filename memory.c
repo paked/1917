@@ -7,11 +7,11 @@
  
 #include <stdio.h>
 #include <stdlib.h>
- 
+#include <limits.h>
+
 long add (int x, int y);
  
 int main(int argc, const char * argv[]) {
-
     int x;
     int y;
     long total;
@@ -25,10 +25,12 @@ int main(int argc, const char * argv[]) {
 
     char c ='a';
 
-    unsigned long ul       = 0;
-    unsigned int ui        = 1;
-    unsigned long long ull = 2;
-    unsigned short us      = 3;
+    unsigned long ul       = ULONG_MAX;
+    unsigned int ui        = UINT_MAX;
+    unsigned long long ull = ULLONG_MAX;
+    unsigned short us      = USHRT_MAX;
+    
+    printf("%lu, %ud, %llud, %hu\n", ul + 2, ui, ull, us);
 
     signed long sl       = 4;
     signed int si        = 5;
@@ -44,7 +46,7 @@ int main(int argc, const char * argv[]) {
     double d = 3.14;
 
     printf("sizeof unsigned long: %ld, position: %p\n", sizeof(ul), &ul);
-    printf("sizeof unsigned int: %ld\n, position %p\n", sizeof(ui), &ui);
+    printf("sizeof unsigned int: %ld, position %p\n", sizeof(ui), &ui);
     printf("sizeof unsigend long long: %ld, position: %p\n", sizeof(ull), &ull);
     printf("sizeof unsigned short: %ld, position: %p\n", sizeof(us), &us);
 
