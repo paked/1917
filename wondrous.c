@@ -12,6 +12,8 @@ int printWondrous(int start);
 int main(int argc, char * argv[]) {
     assert(printWondrous(3) == 8);
     assert(printWondrous(1) == 1);
+
+    return EXIT_SUCCESS;
 }
 
 int printWondrous(int start) {
