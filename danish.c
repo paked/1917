@@ -28,4 +28,22 @@ void showDanish(void) {
 
         segments += 1;
     }   
+
+    printf("\n\n");
+
+    segments = 0;
+    int col = 0;
+    while(col < 5) {
+        int row = 0;
+        while(row < 12) {
+            if (row == 2 || col == 2) {
+                printf(" ");
+            }else {
+                printf("*"); 
+            }
+            row++;
+        }
+        printf("\n");
+        col++;
+    }
 }
