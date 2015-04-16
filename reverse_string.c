@@ -3,17 +3,17 @@
 #include <assert.h>
 #include <string.h>
 
-void reverseString1(char string[], int n);
+void reverseString(char string[], int n);
 
 int main(int argc, char *argv[]) {
     char str[3] = "abc";
-    reverseString1(str, 3);
+    reverseString(str, 3);
     
     printf("%s\n", str);
     return EXIT_SUCCESS;
 }
 
-void reverseString1(char string[], int n) {
+void reverseString(char string[], int n) {
     printf("%s vs ", string);
     n = n - 1;
     int i = 0;
