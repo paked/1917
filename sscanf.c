@@ -12,7 +12,7 @@ int main(int argc, char *argv[]) {
     double y;
     double z;
 
-    sscanf(str, "/tile_x-%lf_y%lf_z%lf.bmp", &x, &y, &z);
+    sscanf(str, "/tile_x%lf_y%lf_z%lf.bmp", &x, &y, &z);
 
     printf("x: %lf, y:%lf, zoom: %lf\n", x, y, z);
     
