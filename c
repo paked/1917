@@ -1,4 +1,4 @@
-export ARGS="-Wall -Werror -O"
+export CLFAGS="-Wall -Werror -O"
 export CC=gcc
 
-$CC $ARGS -o $1.o $1.c
+$CC $CFLAGS $EFLAGS -o $1.o $1.c
