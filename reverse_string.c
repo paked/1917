@@ -3,28 +3,43 @@
 #include <assert.h>
 #include <string.h>
 
-void reverseString(char string[], int n);
+char *reverse(char *message);
+void testReverse(void);
 
 int main(int argc, char *argv[]) {
-    char str[3] = "abc";
-    reverseString(str, 3);
+    char *string = "Hello";
+    char *reversed = reverse("Hello");
+
+    printf("%s\n", reversed);
+    free(reversed);
     
-    printf("%s\n", str);
+    testReverse();
+    printf("Are you *actually* awesome...\n");
+    printf("Tests say yes.");
+
     return EXIT_SUCCESS;
 }
 
-void reverseString(char string[], int n) {
-    printf("%s vs ", string);
-    n = n - 1;
-    int i = 0;
-    char c;
-    while (i < (n / 2)) {
-        c = string[i];
-        string[i] = string[n - i];
-        string[n - i] = c;
+char *reverse(char *message) {
+    int n = strlen(message);
+    char *reversed = malloc(sizeof(char) * n + 1);
+    n = n;
 
-        i++;
+    int i = 0;
+    while (i < n) {
+        reversed[i] = message[n - i -1];
+        i += 1;
     }
 
-    printf("%s\n", string);
+    printf("str is: %s\n", reversed);
+
+    return reversed;
+}
+
+void testReverse(void) {
+    char *str1 = "Hello";
+    assert(strcmp(reverse(str1), "olleH"));
+    assert(strcmp(reverse("lol"), "lol"));
+    assert(strcmp(reverse("troll"), "llort"));
+    assert(strcmp(reverse(""), ""));
 }
