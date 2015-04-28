@@ -14,19 +14,13 @@
  
  
 int main (int argc, char *argv[]) {
-	char *message = "http://almondbread.cse.unsw.edu.au:7191/tile_x3.14_y-0.141_z5.bmp";
- 
-	triordinate dat = extract (message);
- 
-	printf ("dat is (%f, %f, %d)\n", dat.x, dat.y, dat.z);
- 
-	assert (dat.x == 3.14);
-	assert (dat.y == -0.141);
-	assert (dat.z == 5);
- 
-    testMyAtoL();
-    testMyAtoD();
-    printf("Passed tests! You are awesome!\n");
+    double gotd = myAtoD("-0.123456789");
+    printf("%f\n", gotd);
+
+    assert(gotd == -0.123456789); 
+
+    long gotl = myAtoL("-99");
+    assert(gotl == -99);
 	return EXIT_SUCCESS;
 }
 
@@ -34,34 +28,42 @@ int main (int argc, char *argv[]) {
 long myAtoL(char *message) {
     long num = 0;
     int place = 1;
+    int mod = 1;
     int n = strlen(message) - 1;
 
     int i = 0;
     while (i < (n + 1)) {
         char c = message[n - i];
-        long n = c - '0';
+        if (c == '-') {
+            mod = -1;
+        }else {
+            long n = c - '0';
 
-        num += n * place;
+            num += n * place;
+            place *= 10;
+        }
+
         i += 1;
-        place *= 10;
     }
 
-    return num;
+    return num * mod;
 }
 
 double myAtoD(char *message) {
     double num = 0;
     int place = 1;
     int decimalAt = 1;
-    int usingDecimal = 1;
     int n = strlen(message) - 1;
+    int mod = 1;
 
     int i = 0;
     while (i < (n + 1)) {
         char c = message[n - i];
         if (c == '.') {
             decimalAt = place; 
-        } else { 
+        } else if (c == '-') {
+            mod = -1;
+        }else { 
             double n = c - '0';
             num += n * place;
             place *= 10;
@@ -71,7 +73,7 @@ double myAtoD(char *message) {
     }
 
     num /= decimalAt;
-    return num;
+    return num * mod;
 }
 
 triordinate extract(char *string) {
@@ -79,15 +81,4 @@ triordinate extract(char *string) {
     sscanf(string, "http://almondbread.cse.unsw.edu.au:7191/tile_x%lf_y%lf_z%d.bmp", &t.x, &t.y, &t.z);
 
     return t;
-}
-
-void testMyAtoL(void) {
-    assert(myAtoL("100") == 100);
-    assert(myAtoL("") == 0);
-    assert(myAtoL("65") == 65);
-}
-
-void testMyAtoD(void) {
-    assert(myAtoD("10.101") == 10.1010);
-    assert(myAtoD("") == 0);
 }
