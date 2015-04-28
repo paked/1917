@@ -7,7 +7,6 @@ char *reverse(char *message);
 void testReverse(void);
 
 int main(int argc, char *argv[]) {
-    char *string = "Hello";
     char *reversed = reverse("Hello");
 
     printf("%s\n", reversed);
@@ -30,6 +29,7 @@ char *reverse(char *message) {
         reversed[i] = message[n - i -1];
         i += 1;
     }
+    reversed[i] = 0;
 
     printf("str is: %s\n", reversed);
 
@@ -38,8 +38,6 @@ char *reverse(char *message) {
 
 void testReverse(void) {
     char *str1 = "Hello";
-    assert(strcmp(reverse(str1), "olleH"));
-    assert(strcmp(reverse("lol"), "lol"));
-    assert(strcmp(reverse("troll"), "llort"));
-    assert(strcmp(reverse(""), ""));
+    char *str2 = "Hello";
+    assert(strcmp(reverse(str1), str2));
 }
