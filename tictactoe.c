@@ -14,12 +14,15 @@
 #define GAME_TIED 2
 #define GAME_NOT_OVER 0
 
+typedef struct _move {
+    int x;
+    int y;
+} Move;
+
 typedef struct _game {
     int map[BOARD_SIZE][BOARD_SIZE];
     unsigned int roundCount;
 } Game;
-
-// TODO make "move" struct to represent a potential move
 
 // TODO split logic out of this main file
 
@@ -34,8 +37,8 @@ typedef struct _game {
 void printSpot(int s);
 void printGame(Game g);
 Game newGame(void);
-int validMove(Game g, int x, int y);
-Game makeMove(Game g, int p, int x, int y);
+int validMove(Game g, Move m);
+Game makeMove(Game g, int p, Move m);
 int end(Game g, int p);
 
 Game newGame(void) {
@@ -96,22 +99,22 @@ void printSpot(int s) {
     printf(" ");
 }
 
-int validMove(Game g, int x, int y) {
+int validMove(Game g, Move m) {
     // boundary checks
-    if (x < 0 || y < 0 || x > BOARD_SIZE|| y > BOARD_SIZE) {
+    if (m.x < 0 || m.y < 0 || m.x > BOARD_SIZE || m.y > BOARD_SIZE) {
         return 0;
     }
     
     // move already made
-    if (g.map[y][x] != EMPTY) {
+    if (g.map[m.y][m.x] != EMPTY) {
         return 0;
     }
 
     return 1;
 }
 
-Game makeMove(Game g, int p, int x, int y) {
-    g.map[y][x] = p;
+Game makeMove(Game g, int p, Move m) {
+    g.map[m.y][m.x] = p;
 
     g.roundCount += 1;
 
@@ -215,15 +218,15 @@ int main(int argc, char *argv[]) {
         while (1) {
             printf("Where would you like to place your player?\n");
 
-            int x, y;
-            scanf("%d %d", &x, &y);
+            Move m;
+            scanf("%d %d", &m.x, &m.y);
+            
+            m.x -= 1;
+            m.y -= 1;
 
-            x -= 1;
-            y -= 1;
-
-            printf("placing at grid cooords (%d %d)\n", x, y);
-            if (validMove(g, x, y)) {
-                g = makeMove(g, p, x, y);
+            printf("placing at grid cooords (%d %d)\n", m.x, m.y);
+            if (validMove(g, m)) {
+                g = makeMove(g, p, m);
                 break;
             } 
 
