@@ -3,26 +3,12 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-
-#define BOARD_SIZE 3
-
-#define EMPTY -1 
-#define PLAYER_ONE 0
-#define PLAYER_TWO 1
-
-#define GAME_WON 1
-#define GAME_TIED 2
-#define GAME_NOT_OVER 0
-
-typedef struct _move {
-    int x;
-    int y;
-} Move;
+#include "tictactoe.h"
 
 typedef struct _game {
     int map[BOARD_SIZE][BOARD_SIZE];
     unsigned int roundCount;
-} Game;
+} game;
 
 // TODO split logic out of this main file
 
@@ -32,36 +18,35 @@ typedef struct _game {
 
 // TODO allow symbol selection for characters
 
-// TODO create ADT
-
-void printSpot(int s);
-void printGame(Game g);
-Game newGame(void);
-int validMove(Game g, Move m);
-Game makeMove(Game g, int p, Move m);
-int end(Game g, int p);
-
 Game newGame(void) {
-    Game g;
+    game *g = malloc(sizeof(game));
     int y = 0;
 
     while (y < BOARD_SIZE) {
         int x = 0;
         while (x < BOARD_SIZE) {
-            g.map[y][x] = EMPTY;
+            g->map[y][x] = EMPTY;
             x += 1;
         }
 
         y += 1;
     }
 
-    g.roundCount = 0;
+    g->roundCount = 0;
 
     return g;
 }
 
+int getSpot(Game g, int x, int y) {
+    return g->map[y][x];
+}
+
+unsigned int getRound(Game g) {
+    return g->roundCount;
+}
+
 void printGame(Game g) {
-    printf("Round #%d\n", g.roundCount);
+    printf("Round #%d\n", getRound(g));
 
     int y = 0;
     
@@ -73,7 +58,7 @@ void printGame(Game g) {
         int x = 0;
         printf("|");
         while (x < BOARD_SIZE) {
-            printSpot(g.map[y][x]);
+            printSpot(getSpot(g, x, y));
             printf("|");
             x += 1;
         }
@@ -99,30 +84,30 @@ void printSpot(int s) {
     printf(" ");
 }
 
-int validMove(Game g, Move m) {
+int validMove(Game g, pos m) {
     // boundary checks
     if (m.x < 0 || m.y < 0 || m.x > BOARD_SIZE || m.y > BOARD_SIZE) {
         return 0;
     }
     
     // move already made
-    if (g.map[m.y][m.x] != EMPTY) {
+    if (getSpot(g, m.x, m.y) != EMPTY) { 
         return 0;
     }
 
     return 1;
 }
 
-Game makeMove(Game g, int p, Move m) {
-    g.map[m.y][m.x] = p;
+Game makeMove(Game g, int p, pos m) {
+    g->map[m.y][m.x] = p;
 
-    g.roundCount += 1;
+    g->roundCount += 1;
 
     return g;
 }
 
 int end(Game g, int p) {
-    if (g.roundCount == (BOARD_SIZE * BOARD_SIZE)) {
+    if (getRound(g) == (BOARD_SIZE * BOARD_SIZE)) {
         return GAME_TIED;
     }
 
@@ -134,7 +119,7 @@ int end(Game g, int p) {
     while (y < BOARD_SIZE) {
         x = 0;
         while (x < BOARD_SIZE) {
-            if (g.map[y][x] != p) {
+            if (getSpot(g, x, y) != p) {
                 break;
             }
 
@@ -154,7 +139,7 @@ int end(Game g, int p) {
     while (x < BOARD_SIZE) {
         y = 0;
         while (y < BOARD_SIZE) {
-            if (g.map[y][x] != p) {
+            if (getSpot(g, y, x) != p) {
                 break;
             }
 
@@ -172,7 +157,7 @@ int end(Game g, int p) {
     y = 0;
     x = 0;
     while (x < BOARD_SIZE) {
-        if (g.map[x][x] != p) {
+        if (getSpot(g, x, x) != p) {
             break;
         }
 
@@ -187,7 +172,7 @@ int end(Game g, int p) {
     // TODO neaten this up
     int i = 0;
     while (i < BOARD_SIZE) {
-        if (g.map[i][BOARD_SIZE- i - 1] != p) {
+        if (getSpot(g, i, BOARD_SIZE - i - 1) != p) {
             break;
         }
 
@@ -201,54 +186,4 @@ int end(Game g, int p) {
     return GAME_NOT_OVER;
 }
 
-int main(int argc, char *argv[]) {
-    Game g = newGame();
-
-    while(1) {
-        printGame(g);
-
-        int p;
-        if (g.roundCount % 2 == 0) {
-            p = PLAYER_ONE;
-        } else {
-            p = PLAYER_TWO;
-        }
-
-
-        while (1) {
-            printf("Where would you like to place your player?\n");
-
-            Move m;
-            scanf("%d %d", &m.x, &m.y);
-            
-            m.x -= 1;
-            m.y -= 1;
-
-            printf("placing at grid cooords (%d %d)\n", m.x, m.y);
-            if (validMove(g, m)) {
-                g = makeMove(g, p, m);
-                break;
-            } 
-
-            printf("that is not a valid move, try again\n"); 
-        }
-
-        printf("\n");
-        
-        int result = end(g, p);
-
-        if (result != GAME_NOT_OVER) {
-            printGame(g);
-
-            if (result == GAME_WON) {
-                printf("\n\nplayer %d won!\n", p);
-            }else if (result == GAME_TIED) {
-                printf("\n\ngame over, tied!\n");
-            }
-
-            break;
-        }
-    }
-
-    return EXIT_SUCCESS;
-}
+// vim: sts=4 et cc=72
