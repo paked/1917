@@ -11,13 +11,15 @@
 #define GAME_TIED 2
 #define GAME_NOT_OVER 0
 
-
 typedef struct _pos {
     int x;
     int y;
 } pos;
 
 typedef struct _game * Game;
+
+// TODO add descriptions of functions
+// TODO add more getters and setters
 
 void printSpot(int s);
 void printGame(Game g);
@@ -28,5 +30,5 @@ int end(Game g, int p);
 int getSpotPos(Game g, pos m);
 int getSpot(Game g, int x, int y);
 unsigned int getRound(Game g);
-
+int getCurrentPlayer(Game g);
 // vim: sts=4 et cc=72

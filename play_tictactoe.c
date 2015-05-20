@@ -11,12 +11,7 @@ int main(int argc, char *argv[]) {
     while(1) {
         printGame(g);
 
-        int p;
-        if (getRound(g) % 2 == 0) {
-            p = PLAYER_ONE;
-        } else {
-            p = PLAYER_TWO;
-        }
+        int p = getCurrentPlayer(g);
 
         while (1) {
             printf("Where would you like to place your player?\n");

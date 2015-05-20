@@ -10,13 +10,10 @@ typedef struct _game {
     unsigned int roundCount;
 } game;
 
-// TODO split logic out of this main file
-
 // TODO make function names more specific to the "game"
-
-// TODO move contents of main into a seperate "run game" function
-
 // TODO allow symbol selection for characters
+// TODO descriptions of game
+// TODO write tests
 
 Game newGame(void) {
     game *g = malloc(sizeof(game));
@@ -184,6 +181,17 @@ int end(Game g, int p) {
     }
 
     return GAME_NOT_OVER;
+}
+
+int getCurrentPlayer(Game g) {
+    int p;
+    if (getRound(g) % 2 == 0) {
+        p = PLAYER_ONE;
+    } else {
+        p = PLAYER_TWO;
+    }
+
+    return p;
 }
 
 // vim: sts=4 et cc=72
