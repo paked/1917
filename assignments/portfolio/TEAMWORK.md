@@ -1,4 +1,8 @@
 # Teamwork - by Harrison Shoebridge
+
+## Infographic
+![http://olivertan.me/images/me.jpg](http://olivertan.me/images/me.jpg) Cat.
+
 While I was in a team I tried to help as much as possible. During the doomsday assignment, I helped my brain. During Mandelbrot I helped Julia[n]. During Game.c I helped Simon, Julia[n] and James.
 
 In Mandelbrot I wrote a significant portion of the HTTP parts with routing while fixing bugs and writing a few colour algorithms. Julian took on the complex numbers things and we made quite a good team, whenever he had an issue he would ask me and whenever I had an issue I would ask him! We were able to fix all our issues and submit code on time.

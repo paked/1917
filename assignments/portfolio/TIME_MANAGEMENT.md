@@ -1,4 +1,8 @@
 # Time/Project Management by Harrison Shoebridge
+
+## Infographic
+![http://olivertan.me/images/me.jpg](http://olivertan.me/images/me.jpg) Cat.
+
 I always try to complete the activities to the best of my ability, in the neatest way possible. I was mostly on time with my programming tasks (apart from the period when I was on camp). I tracked my progress with a git repository located at http://github.com/paked/1917, every week I went back over my progress and looked over my development while making notes on what I could improve in. There were parts were I got completely lost in (re: frames) but I managed to get over that with the help of some tutors!
 
 Repository: http://github.com/paked/1917

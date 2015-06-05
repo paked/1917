@@ -1,4 +1,8 @@
 # Artisanship - By Harrison Shoebridge
+
+## Infographic
+![http://olivertan.me/images/me.jpg](http://olivertan.me/images/me.jpg) Cat.
+
 One of my biggest strengths in programming is that of reflection, I am always looking for ways to make my existing code better (in all sense of the word: neater, faster, more documentation). Examples of this include `danish.c` where I spent originally was using two for loops to complete a job that could be accomplished by one!
 
 Original: https://github.com/paked/1917/blob/1789847d2cb0cd5623b6564772a5cc7d178abe25/danish.c
