@@ -37,5 +37,6 @@ https://github.com/paked/1917/blob/master/assignments/portfolio/TEAMWORK_NOTES.m
 
 https://github.com/paked/1917/blob/master/assignments/portfolio/TIME_MANAGEMENT_NOTES.md
 
+In the future I hope to be able to focus more, as it is perhaps my biggest downfall as a worker. It has greatly hindered my ability to correctly manage my time, that and my procrastinational abilities. However, saying that I have been able to do fairly well on time management for my Something Awesome project.
 
-In the future I hope to be able to focus more, as it is perhaps my biggest downfall as a worker. It has greatly hindered my ability to correctly manage my time, that and my procrastinational abilities.
+Writing about time management: https://www.openlearning.com/u/harrison/blog/ReflectionMandelbrotTeamworkTasksAndSomethingAwesome

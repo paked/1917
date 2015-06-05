@@ -44,3 +44,5 @@ Golang documentation: http://godoc.org/github.com/paked/models
 Doomsday documetation: https://github.com/paked/1917/blob/master/assignments/doomsday/main.c
 
 Commit messages: https://github.com/paked/NUMBERSFORPICTURES/commits/master
+
+Module two reflection with notes on craftsmanship: https://www.openlearning.com/u/harrison/blog/Module2Reflection
