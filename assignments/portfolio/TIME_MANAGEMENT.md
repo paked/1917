@@ -1,7 +1,7 @@
 # Time/Project Management by Harrison Shoebridge
 I always try to complete the activities to the best of my ability, in the neatest way possible. I was mostly on time with my programming tasks (apart from the period when I was on camp). I tracked my progress with a git repository located at http://github.com/paked/1917, every week I went back over my progress and looked over my development while making notes on what I could improve in. There were parts were I got completely lost in (re: frames) but I managed to get over that with the help of some tutors!
 
-repository: http://github.com/paked/1917
+Repository: http://github.com/paked/1917
 
 I always got my lectures watched on time. This was great as I could walk into a tutorial confident that I knew everything that I needed to know in order to complete the tasks at hand. During camp I didnt watch lectures, and the week we got back was highly painful in terms of hours spent in front of a computer listening to Richard Bucklands voice sped up at 200%.
 

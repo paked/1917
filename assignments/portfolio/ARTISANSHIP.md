@@ -2,24 +2,30 @@
 One of my biggest strengths in programming is that of reflection, I am always looking for ways to make my existing code better (in all sense of the word: neater, faster, stronger). Examples of this include danish.c where I spent originally was using two for loops to complete a job that could be accomplished by one!
 
 original: https://github.com/paked/1917/blob/1789847d2cb0cd5623b6564772a5cc7d178abe25/danish.c
-polished: https://github.com/paked/1917/blob/7a0564687e00df5da8a607e5e1d5f3e8df797ec3/danish.c
+
+Polished: https://github.com/paked/1917/blob/7a0564687e00df5da8a607e5e1d5f3e8df797ec3/danish.c
 
 Another example of this is an extra piece of work I did as practice for the exam. Oliver gave us a task where we had to print a triangle of stars, I completed this task using the implied method... but felt something was missing. After some quick thinking after dinner that night I realised that I could use recursion to solve the problem, in a much more elegant way.
 
-original: https://gist.github.com/paked/56b8ae2b0d5a6bd6b02c
-updated: https://github.com/paked/1917/blob/master/recursive_stars.c
+Original: https://gist.github.com/paked/56b8ae2b0d5a6bd6b02c
+
+Opdated: https://github.com/paked/1917/blob/master/recursive_stars.c
 
 While writing code for 1917 I was usually interested in writing tests for my code, in the projects I did extensive testing of how things worked. In doomsday I even tested the tests for my project!
 
-rot13 testing: https://github.com/paked/1917/blob/master/rot13.c
-doomsday testing: https://github.com/paked/1917/blob/master/assignments/doomsday/main.c
-complex/adt testing: https://github.com/paked/1917/blob/master/testComplex.c
+Rot13 testing: https://github.com/paked/1917/blob/master/rot13.c
+
+Doomsday testing: https://github.com/paked/1917/blob/master/assignments/doomsday/main.c
+
+Complex/adt testing: https://github.com/paked/1917/blob/master/testComplex.c
 
 During the course my craftsmanship skills improved exponentially, this was due to my configuration and personal pedant-ness. When I first started off 1917 I was using an incredibly poorely configured vim, tabs and bad syntax coloring all over the place! Im honestly amazed I got anything written at all. I also was used to a few patterns from my other programming languages, I spent a lot of time naming "public variables" in characters in structs with capitol letters and not properly indentating a my code (in Go, we have a tool called gofmt... it auto formats your code, needless to say I miss it!). Overtime this got better during the projects I made myself use proper indentation and it led to some nice looking code. Another issue for me was my constant use of magic numbers. This was fixed quickly too.
 
-bad indentation: https://github.com/paked/1917/blob/master/assignments/doomsday/main.c#L105-L143
-magic numbers: https://github.com/paked/1917/blob/master/leap_year.c
-better code: https://github.com/paked/1917/blob/master/tictactoe.c
+Bad indentation: https://github.com/paked/1917/blob/master/assignments/doomsday/main.c#L105-L143
+
+Magic numbers: https://github.com/paked/1917/blob/master/leap_year.c
+
+Better code: https://github.com/paked/1917/blob/master/tictactoe.c
 
 Craftsmanship to me is about building things that other people are able to quickly understand and contribute too. A symptom of this is modularity and abstraction, both of which I am now trying very hard to achieve.
 
@@ -27,7 +33,10 @@ As a programmer I came across a few bugs while writing my something awesome proj
 
 Now that the course is over I have greatly improved the quality of my testing and overall care of my programs. I am now writing much more documentation for my code, and writing better commit messages within my projects. My testing skills have also improved and I am able to write proper integration and unit tests.
 
-tictactoe documentation: https://github.com/paked/1917/blob/master/tictactoe.h
-golang documentation: http://godoc.org/github.com/paked/models
-doomsday documetation: https://github.com/paked/1917/blob/master/assignments/doomsday/main.c
-commit messages: https://github.com/paked/NUMBERSFORPICTURES/commits/master
+Tictactoe documentation: https://github.com/paked/1917/blob/master/tictactoe.h
+
+Golang documentation: http://godoc.org/github.com/paked/models
+
+Doomsday documetation: https://github.com/paked/1917/blob/master/assignments/doomsday/main.c
+
+Commit messages: https://github.com/paked/NUMBERSFORPICTURES/commits/master
