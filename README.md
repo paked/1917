@@ -6,4 +6,4 @@ I have published this so that I can link to it in my portfolios.
 ## Licensing
 If a license is not provided in the c file, assume that it goes under the MIT license found at /LICENSE.
 
-## If you are a not yet graduated HS/COMP 1917 solution you are only doing yourself a disservice by looking at this code.
+## If you are a student of HS/COMP1917 and have not graduated you are only doing yourself a disservice by looking at this code.

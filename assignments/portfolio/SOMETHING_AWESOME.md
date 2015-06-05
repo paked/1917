@@ -3,4 +3,6 @@ My something awesome project has gone through a variety of stages. Originally I 
 
 I built this project to test my Entrepreneurship and Overcoming Procrastination skills.
 
-It is available at http://numbers.harrisonshoebridge.me
+It is available live at http://numbers.harrisonshoebridge.me
+
+You can find the source code at https://github.com/paked/NUMBERSFORPICTURES
