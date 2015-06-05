@@ -1,31 +1,3 @@
-* I completed most activities on time. Apart from when I was on camp
-  * screenshots
-  * git repo
-* We always submitted for the major project on time
-  * screenshots/links 
-    * mandelbrot
-    * doomsday
-    * game.c
-* I submitted all of my assignments on time
-  * screenshots/links 
-    * mandelbrot
-    * doomsday
-    * game.c 
-* We planned our Game.c
-  * github comments
-  * irc log
-* We reflected on our design
-  * github comments
-* We code reviewed the Game.c
-  * github code comments
-* I was never late for a tutorial! (apart from that time when I had an excursion to les mis with music class)
-* Watched most lectures on time (apart from camp)
-  *screenshots/links
-
-* lectures
-* projects
-* tasks
-
 # Time/Project Management by Harrison Shoebridge
 I always try to complete the activities to the best of my ability, in the neatest way possible. I was mostly on time with my programming tasks (apart from the period when I was on camp). I tracked my progress with a git repository located at http://github.com/paked/1917, every week I went back over my progress and looked over my development while making notes on what I could improve in. There were parts were I got completely lost in (re: frames) but I managed to get over that with the help of some tutors!
 
@@ -43,11 +15,23 @@ During my time at HS1917 I was never late for a tutorial, apart from when I had 
 
 We used our time effectively to conduct code reviews while we were working on projects. Team members would spend a few seconds every time a commit was made quickly going over code and making sure it wasnt *completely* insane.
 
-During the course we always submitted our assignments on time, be they Game (already stated) or doomsday and Mandelbrot.
+During the course we always submitted our assignments on time, be they Game (already stated) or doomsday and Mandelbrot. I also made an effort to always plan out the code I was going to write. I did this by placing in inline comments which described in english what the future code would do, then proceding to leave it for 10 minutes to let my brain mull over it. After the mulling had finished I would finally begin writing the actual C. I found doing this I was able to clear my head and remove and stupid first thought-solutions, that never work. I did this with my written assignemnts to, like blog posts and portfolio work.
+
+Submitting assignments on time:
+
 https://www.dropbox.com/s/j8qzhizl42eos09/Screenshot%202015-06-05%2022.24.30.png?dl=0
 
 https://www.dropbox.com/s/9nb3u88s3caggqr/Screenshot%202015-06-05%2022.26.11.png?dl=0
 
 https://www.dropbox.com/s/zd0vrkkn1by9fvp/Screenshot%202015-06-05%2022.26.55.png?dl=0
+
+Drafting up portfolio work in notes form:
+
+https://github.com/paked/1917/blob/master/assignments/portfolio/ARTISANSHIP_NOTES.md
+
+https://github.com/paked/1917/blob/master/assignments/portfolio/TEAMWORK_NOTES.md
+
+https://github.com/paked/1917/blob/master/assignments/portfolio/TIME_MANAGEMENT_NOTES.md
+
 
 In the future I hope to be able to focus more, as it is perhaps my biggest downfall as a worker. It has greatly hindered my ability to correctly manage my time, that and my procrastinational abilities.
